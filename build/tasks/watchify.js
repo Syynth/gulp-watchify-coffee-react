@@ -8,7 +8,7 @@ var shim = require('browserify-shim');
 var config = require('../config.json');
 var plumber = require('gulp-plumber');
 
-var bundler = watchify(browserify(config.js.in, {insertGlobals: false, debug: false}));
+var bundler = watchify(browserify(config.js.in, {insertGlobals: false, extensions: ['.coffee', '.cjsx']}));
 bundler.transform(reactify);
 bundler.transform(shim);
 

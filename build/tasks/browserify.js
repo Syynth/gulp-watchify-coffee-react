@@ -1,13 +1,12 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
-var plumber = require('gulp-plumber');
-var coffeeReact = require('coffee-reactify');
+var react = require('coffee-reactify');
 var shim = require('browserify-shim');
 var source = require('vinyl-source-stream');
 var config = require('../config.json');
 
 module.exports = function() {
-  return browserify({insertGlobals: false})
+  return browserify({insertGlobals: false, extensions: ['.coffee', '.cjsx']})
   .add(config.js.in)
   .transform(coffeeReact)
   .transform(shim)

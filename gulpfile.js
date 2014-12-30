@@ -3,6 +3,7 @@ var gulp = require('./build')([
   'watchify',
   'watch',
   'open',
+  'images',
   'express',
   'clean',
   'reload'
